@@ -7,6 +7,5 @@
 
 <li><a href="Advanced_CSS/index.html">Advanced CSS</a></li>
 
-<li><a href="Responsive/index.html">Responsive Web Design</a>/li>
+<li><a href="Responsive/index.html">Responsive Web Design</a>
 
-</ul>
