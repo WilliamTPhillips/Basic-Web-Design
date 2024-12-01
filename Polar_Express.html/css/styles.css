@@ -180,7 +180,7 @@ img {
     }
 }
 
-/* Add Snowflakes Effect */
+
 .snowflake {
     position: absolute;
     color: #fff;
@@ -188,10 +188,10 @@ img {
     opacity: 0.8;
     animation: snowfall 10s linear infinite;
     z-index: 9999;
-    pointer-events: none; /* Ensure snowflakes don't interfere with other elements */
+    pointer-events: none; 
 }
 
-/* Snowflakes Generating */
+
 @keyframes snowfall {
     0% {
         top: -10%;
