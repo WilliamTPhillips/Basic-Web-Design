@@ -1,243 +1,208 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Snowflakes Animation</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"> <!-- Font -->
-    <style>
-        /* Global Styles */
-        body {
-            background: linear-gradient(45deg, #ff4e50, #d9d9d9); /* Red to Green gradient background */
-            background-size: 400% 400%;
-            animation: gradientAnimation 10s ease infinite; /* Animated gradient */
-            font-family: 'Roboto', sans-serif;
-            scroll-behavior: smooth; /* Smooth scrolling */
-            position: relative;
-            overflow-x: hidden; /* Prevent horizontal scrolling */
-            margin: 0;
-            padding: 0;
-        }
+/* Global Styles */
 
-        img {
-            display: block;
-            margin: 0 auto;
-            width: 50%;
-            max-width: 100%; /* Make images responsive */
-        }
+body {
+    background: linear-gradient(45deg, #0bfd6c, #92c5a9);
+    background-size: 400% 400%;
+    animation: gradientAnimation 10s ease infinite; /* Animated gradient */
+    font-family: 'Roboto', sans-serif;
+    scroll-behavior: smooth; /* Smooth scrolling */
+    position: relative;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
 
-        /* Snowflakes Animation */
-        @keyframes snowfall {
-            0% {
-                top: -10%;
-                left: calc(100% * var(--random-start));
-                opacity: 1;
-            }
-            100% {
-                top: 100%;
-                left: calc(100% * var(--random-end));
-                opacity: 0.5;
-            }
-        }
+img {
+    display: block;
+    margin: 0 auto;
+    width: 50%;
+    max-width: 100%; /* Make images responsive */
+}
 
-        .snowflake {
-            position: absolute;
-            color: #fff;
-            font-size: 24px;
-            opacity: 0.8;
-            animation: snowfall 10s linear infinite;
-            z-index: 9999;
-            pointer-events: none; /* Ensure snowflakes don't interfere with other elements */
-            user-select: none; /* Prevent text selection on snowflakes */
-        }
+/* Snowflakes Animation */
+@keyframes snowfall {
+    0% {
+        top: -10%;
+    }
+    100% {
+        top: 100%;
+    }
+}
 
-        /* Container Styling */
-        #container {
-            width: 70%;
-            margin: 20px auto;
-            border: 4px solid #2c3e50;
-            border-radius: 20px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Subtle shadow */
-            background: rgba(255, 255, 255, 0.9); /* Semi-transparent white */
-            backdrop-filter: blur(10px); /* Slight blur effect for a frosted glass look */
-        }
+.snowflake {
+    position: absolute;
+    color: #fff;
+    font-size: 24px;
+    opacity: 0.8;
+    animation: snowfall 10s linear infinite;
+    z-index: 9999;
+    pointer-events: none; /* Ensure snowflakes don't interfere with other elements */
+}
 
-        /* Mobile Styles */
-        @media (min-width: 320px) {
-            nav {
-                background-color: hsl(0, 90%, 51%);
-                padding: 5px;
-                margin-top: 10px;
-                text-align: center;
-            }
+/* Container Styling */
+#container {
+    width: 65%;
+    margin: 20px auto;
+    border: 4px solid #2c3e50;
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Subtle shadow */
+    background-color: #fff; /* White background for contrast */
+}
 
-            nav ul {
-                list-style-type: none;
-                padding: 0;
-            }
+/* Mobile Styles */
 
-            nav li {
-                display: block;
-            }
+@media (min-width: 320px) {
+    nav {
+        background-color: hsl(0, 90%, 51%);
+        padding: 5px;
+        margin-top: 10px;
+        text-align: center;
+    }
 
-            nav li a {
-                display: block;
-                height: 40px;
-                line-height: 40px;
-                background-color: #BF2A2A;
-                color: white;
-                font-size: 24px;
-                text-decoration: none;
-                margin-top: 5px;
-                transition: all 0.3s ease;
-            }
+    nav ul {
+        list-style-type: none;
+        padding: 0;
+    }
 
-            nav li a:hover {
-                background-color: orangered;
-                transform: scale(1.05); /* Slightly enlarge the link on hover */
-                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-            }
+    nav li {
+        display: block;
+    }
 
-            main {
-                padding: 20px;
-            }
+    nav li a {
+        display: block;
+        height: 40px;
+        line-height: 40px;
+        background-color: #BF2A2A;
+        color: white;
+        font-size: 24px;
+        text-decoration: none;
+        margin-top: 5px;
+        transition: all 0.3s ease;
+    }
 
-            h1, h2, h3 {
-                text-align: center;
-                color: #BF2A2A;
-                text-shadow: 0 0 10px #BF2A2A, 0 0 20px #BF2A2A, 0 0 30px #ef0b29; /* Glow effect */
-            }
+    nav li a:hover {
+        background-color: orangered;
+        transform: scale(1.1); /* Slightly enlarge the link on hover */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    }
 
-            footer {
-                text-align: center;
-                padding: 40px;
-                color: #BF2A2A;
-                text-shadow: 1px 1px 1px #ef0b29;
-                animation: fadeInOut 3s infinite;
-            }
+    main {
+        padding: 20px;
+    }
 
-            @keyframes fadeInOut {
-                0%, 100% { opacity: 0.5; }
-                50% { opacity: 1; }
-            }
+    h1, h2, h3 {
+        text-align: center;
+        color: #BF2A2A;
+        text-shadow: 0 0 10px #BF2A2A, 0 0 20px #BF2A2A, 0 0 30px #ef0b29; /* Glow effect */
+    }
 
-            @keyframes gradientAnimation {
-                0% { background-position: 0% 50%; }
-                50% { background-position: 100% 50%; }
-                100% { background-position: 0% 50%; }
-            }
-        }
+    footer {
+        text-align: center;
+        padding: 40px;
+        color: #BF2A2A;
+        text-shadow: 1px 1px 1px #ef0b29;
+        animation: fadeInOut 3s infinite;
+    }
 
-        /* Tablet Styles */
-        @media (min-width: 768px) {
-            nav li {
-                display: inline-block;
-            }
+    @keyframes fadeInOut {
+        0%, 100% { opacity: 0.5; }
+        50% { opacity: 1; }
+    }
 
-            nav li a {
-                width: 150px;
-                height: 50px;
-                line-height: 50px;
-                margin: 5px;
-            }
-        }
+    @keyframes gradientAnimation {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+    }
+}
 
-        /* Desktop Styles */
-        @media (min-width: 1024px) {
-            #container {
-                width: 70%;
-                margin: 20px auto;
-                border: 4px solid #2c3e50;
-                border-radius: 20px;
-                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-                background: rgba(255, 255, 255, 0.9); /* Semi-transparent white */
-            }
+/* Tablet Styles */
 
-            nav {
-                padding: 2px;
-                margin: 0;
-            }
+@media (min-width: 768px) {
+    nav li {
+        display: inline-block;
+    }
 
-            nav li a {
-                background-color: black;
-            }
+    nav li a {
+        width: 150px;
+        height: 50px;
+        line-height: 50px;
+        margin: 5px;
+    }
+}
 
-            #multi_col {
-                display: flex;
-            }
+/* Desktop Styles */
 
-            .col {
-                margin: 20px;
-                padding: 20px;
-                border: 2px solid #2c3e50;
-                position: relative;
-                transition: all 0.3s ease;
-            }
+@media (min-width: 1024px) {
+    #container {
+        width: 65%;
+        margin: 20px auto;
+        border: 4px solid #2c3e50;
+        border-radius: 20px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+        background-color: #fff;
+    }
 
-            .col:hover {
-                background: linear-gradient(145deg, #ff6f61, #ffcc00);
-                color: white;
-            }
+    nav {
+        padding: 2px;
+        margin: 0;
+    }
 
-            .col:hover::before {
-                content: "";
-                position: absolute;
-                top: 0;
-                left: 0;
-                right: 0;
-                bottom: 0;
-                background: rgba(0, 0, 0, 0.2);
-                border-radius: 10px;
-                z-index: 1;
-            }
-        }
-    </style>
-</head>
-<body>
-    <nav>
-        <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Contact</a></li>
-        </ul>
-    </nav>
+    nav li a {
+        background-color: black;
+    }
 
-    <div id="container">
-        <h1>Winter Wonderland</h1>
-        <p>Enjoy the snowfall animation!</p>
-    </div>
+    #multi_col {
+        display: flex;
+    }
 
-    <footer>
-        <p>Happy Holidays!</p>
-    </footer>
+    .col {
+        margin: 20px;
+        padding: 20px;
+        border: 2px solid #2c3e50;
+        position: relative;
+        transition: all 0.3s ease;
+    }
 
-    <script>
-        // Function to create snowflakes
-        function createSnowflakes() {
-            const numberOfSnowflakes = 50; // Number of snowflakes to generate
-            const container = document.body;
+    .col:hover {
+        background: linear-gradient(145deg, #ff6f61, #ffcc00);
+        color: white;
+    }
 
-            for (let i = 0; i < numberOfSnowflakes; i++) {
-                const snowflake = document.createElement('div');
-                snowflake.classList.add('snowflake');
-                snowflake.innerHTML = '❄'; // Snowflake character, you can use a custom one
-                snowflake.style.left = `${Math.random() * 100}vw`; // Random horizontal start position
-                snowflake.style.animationDuration = `${Math.random() * 3 + 7}s`; // Randomize animation duration
-                snowflake.style.animationDelay = `${Math.random() * 10}s`; // Randomize start delay
+    .col:hover::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.2);
+        border-radius: 10px;
+        z-index: 1;
+    }
+}
 
-                // Random horizontal movement for each snowflake
-                snowflake.style.setProperty('--random-start', Math.random());
-                snowflake.style.setProperty('--random-end', Math.random());
 
-                container.appendChild(snowflake);
-            }
-        }
+.snowflake {
+    position: absolute;
+    color: #fff;
+    font-size: 24px;
+    opacity: 0.8;
+    animation: snowfall 10s linear infinite;
+    z-index: 9999;
+    pointer-events: none; 
+}
 
-        // Call the function to generate snowflakes
-        window.onload = createSnowflakes;
-    </script>
-</body>
-</html>
 
+@keyframes snowfall {
+    0% {
+        top: -10%;
+        left: calc(100% * var(--random-start));
+        opacity: 1;
+    }
+    100% {
+        top: 100%;
+        left: calc(100% * var(--random-end));
+        opacity: 0.5;
+    }
+}
 
 
